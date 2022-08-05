@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 import { CssBaseline } from "@mui/material";
-import { SampleComponent } from "./SampleComponent";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 function MyApp({ Component, pageProps }) {
