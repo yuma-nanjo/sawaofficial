@@ -15,6 +15,7 @@ export default function Masthead() {
                 width={150}
                 height={150}
                 quality={100}
+                alt="SAWA logo"
               ></Image>
             </a>
           </Link>
@@ -25,6 +26,7 @@ export default function Masthead() {
             layout="fill"
             objectFit="scale-down"
             quality={100}
+            alt="Text header"
           ></Image>
         </div>
         <div className="absolute z-10 inset-0">
@@ -34,6 +36,7 @@ export default function Masthead() {
             layout="fill"
             objectFit="scale-down"
             priority="false"
+            alt="SAWA header"
           ></Image>
         </div>
         {/* navbar */}
