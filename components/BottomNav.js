@@ -1,45 +1,49 @@
-import { useState, useRef } from "react";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
+import * as React from "react";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import ArticleIcon from "@mui/icons-material/Article";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import ContactMailIcon from "@mui/icons-material/ContactMail";
 import MenuIcon from '@mui/icons-material/Menu';
-import Paper from "@mui/material/Paper";
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import EmailIcon from '@mui/icons-material/Email';
+import ArticleIcon from '@mui/icons-material/Article';
 
-export default function BottomNav() {
-  const [value, setValue] = useState(0);
-  const ref = useRef(null);
+export default function LabelBottomNavigation() {
+  const [value, setValue] = React.useState("recents");
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   return (
-    <Box sx={{ pb: 7 }} ref={ref}>
-      <CssBaseline />
-      <Paper
-        sx={{
-          position: "fixed",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          zIndex: 10,
-        }}
-        elevation={3}
+    <div className="z-50 sm:hidden">
+      <BottomNavigation
+        sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
+        value={value}
+        onChange={handleChange}
       >
-        <BottomNavigation
-          showLabels
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
+        <BottomNavigationAction
+          label="Live"
+          value="live"
+          icon={<CalendarMonthIcon />}
+        />
+        <BottomNavigationAction
+          label="Blog"
+          value="blog"
+          icon={<ArticleIcon />}
+        />
+        <BottomNavigationAction
+          label="Contact"
+          value="contact"
+          icon={<EmailIcon />}
+        />
+        <BottomNavigationAction
+          label="Menu"
+          value="menu"
+          icon={<MenuIcon />}
+          onClick={()=>{
+            console.log("Menuがクリックされました。")
           }}
-        >
-          <BottomNavigationAction label="BLOG" icon={<ArticleIcon />} />
-          <BottomNavigationAction label="LIVE" icon={<CalendarMonthIcon />} />
-          <BottomNavigationAction label="CONTACT" icon={<ContactMailIcon />} />
-          {/* clickするとメニューが出てくる */}
-          <BottomNavigationAction label="MENU" icon={<MenuIcon />} />
-        </BottomNavigation>
-      </Paper>
-    </Box>
+        />
+      </BottomNavigation>
+    </div>
   );
 }

@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 export default function Masthead() {
   return (
     <>
-      <div className="relative h-screen masthead">
+      <div className="relative min-h-screen masthead flex flex-col">
         <div className="absolute w-full z-20 text-center">
           <Link href="/">
             <a>
@@ -16,15 +16,16 @@ export default function Masthead() {
                 height={150}
                 quality={100}
                 alt="SAWA logo"
+                objectFit="responsive"
               ></Image>
             </a>
           </Link>
         </div>
-        <div className="absolute z-20 inset-0 mx-auto w-10/12 opacity-50">
+        <div className="absolute h-1/3 w-full inset-0 m-auto opacity-50 z-30">
           <Image
             src="/text_header_white.png"
             layout="fill"
-            objectFit="scale-down"
+            objectFit="contain"
             quality={100}
             alt="Text header"
           ></Image>
@@ -34,7 +35,7 @@ export default function Masthead() {
             src="/SAWA_header.png"
             quality={100}
             layout="fill"
-            objectFit="scale-down"
+            objectFit="contain"
             priority="false"
             alt="SAWA header"
           ></Image>
@@ -42,9 +43,7 @@ export default function Masthead() {
         {/* navbar */}
         <Navbar />
         {/* navbar */}
-        <div className="sm:hidden">
-          <BottomNav />
-        </div>
+        <BottomNav />
       </div>
     </>
   );
