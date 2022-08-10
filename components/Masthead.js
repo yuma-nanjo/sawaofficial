@@ -21,7 +21,7 @@ export default function Masthead() {
             </a>
           </Link>
         </div>
-        <div className="absolute h-1/3 w-full inset-0 m-auto opacity-50 z-30">
+        <div className="absolute h-1/3 w-full inset-0 m-auto opacity-50 z-10 pointer-events-none">
           <Image
             src="/text_header_white.png"
             layout="fill"
@@ -30,7 +30,7 @@ export default function Masthead() {
             alt="Text header"
           ></Image>
         </div>
-        <div className="absolute z-10 inset-0">
+        <div className="absolute inset-0  pointer-events-none">
           <Image
             src="/SAWA_header.png"
             quality={100}
