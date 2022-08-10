@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import BottomNav from "./BottomNav";
 import Navbar from "./Navbar";
+import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 
 export default function Masthead() {
   return (
@@ -39,6 +40,13 @@ export default function Masthead() {
             priority="false"
             alt="SAWA header"
           ></Image>
+        </div>
+        <div className="left-[50%] translate-x-[-50%] m-auto absolute bottom-20 text-center justify-center items-center z-30 cursor-pointer">
+          <div className="animate-bounce">
+            <Link href="#top">
+              <KeyboardDoubleArrowDownIcon />
+            </Link>
+          </div>
         </div>
         {/* navbar */}
         <Navbar />

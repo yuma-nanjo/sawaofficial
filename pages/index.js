@@ -12,7 +12,7 @@ export default function Home() {
       {/* header */}
       <Masthead />
       {/* header */}
-      <div className="mb-10">
+      <div className="mb-10" id="top">
         <h1 className="text-center m-10 text-2xl">NEWS</h1>
         <News />
       </div>
