@@ -3,6 +3,7 @@ import Link from "next/link";
 import BottomNav from "./BottomNav";
 import Navbar from "./Navbar";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
+import { Link as Scroll } from "react-scroll";
 
 export default function Masthead() {
   return (
@@ -43,9 +44,9 @@ export default function Masthead() {
         </div>
         <div className="left-[50%] translate-x-[-50%] m-auto absolute bottom-20 text-center justify-center items-center z-30 cursor-pointer">
           <div className="animate-bounce">
-            <Link href="#top">
+            <Scroll to="top" smooth={true} offset={-50}>
               <KeyboardDoubleArrowDownIcon />
-            </Link>
+            </Scroll>
           </div>
         </div>
         {/* navbar */}
