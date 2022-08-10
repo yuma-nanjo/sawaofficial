@@ -8,7 +8,7 @@ import { Link as Scroll } from "react-scroll";
 export default function Masthead() {
   return (
     <>
-      <div className="relative min-h-screen masthead flex flex-col">
+      <div className="relative min-h-screen masthead flex flex-col bg-black">
         <div className="absolute w-full z-20 text-center">
           <Link href="/">
             <a>

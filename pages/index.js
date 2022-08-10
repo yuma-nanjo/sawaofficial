@@ -12,8 +12,8 @@ export default function Home() {
       {/* header */}
       <Masthead />
       {/* header */}
-      <div className="mb-10" id="top">
-        <h1 className="text-center m-10 text-2xl">NEWS</h1>
+      <div className="mb-10 bg-black" id="top">
+        <h1 className="text-center p-10 text-2xl">NEWS</h1>
         <News />
       </div>
       <div className="mb-10">

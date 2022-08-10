@@ -16,7 +16,7 @@ export default function LabelBottomNavigation() {
   return (
     <div className="z-50 sm:hidden">
       <BottomNavigation
-        sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
+        sx={{ position: "fixed", bottom: 0, left: 0, right: 0 ,background:"black"}}
         value={value}
         onChange={handleChange}
       >
