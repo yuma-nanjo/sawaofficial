@@ -32,7 +32,7 @@ export default function Masthead() {
             alt="Text header"
           ></Image>
         </div>
-        <div className="absolute inset-0  pointer-events-none bg-[#101010] opacity-80 ">
+        <div className="absolute inset-0  pointer-events-none bg-[#000] opacity-80 ">
           <Image
             src="/SAWA_header.png"
             quality={100}
