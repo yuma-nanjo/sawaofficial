@@ -3,8 +3,8 @@ import Image from "next/image";
 import Masthead from "../components/Masthead";
 import News from "../components/page/news";
 import Live from "../components/page/live";
-import Blog from "../components/page/blog"
-import About from "../components/page/about"
+import Blog from "../components/page/blog";
+import About from "../components/page/about";
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       {/* header */}
       <Masthead />
       {/* header */}
-      <div className="mb-10 bg-black" id="top">
+      <div className="mb-10" id="top">
         <h1 className="text-center p-10 text-2xl">NEWS</h1>
         <News />
       </div>

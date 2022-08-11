@@ -1,22 +1,23 @@
 import "../styles/globals.css";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { background } from "@chakra-ui/react";
 
 function MyApp({ Component, pageProps }) {
   const theme = createTheme({
     palette: {
       mode: "dark",
       primary: {
-        main:"#000000"
+        main:"#fff",
       },
       divider: "#ffffff",
       background: {
-        default: "#000000",
-        paper: "#000000",
+        default: "#000",
+        paper:"#000",
       },
       text: {
         primary: "#fff",
-        secondary: "#000000",
+        secondary: "#fff",
       },
     },
   });

@@ -8,7 +8,7 @@ import { Link as Scroll } from "react-scroll";
 export default function Masthead() {
   return (
     <>
-      <div className="relative min-h-screen masthead flex flex-col bg-black">
+      <div className="relative min-h-screen masthead flex flex-col">
         <div className="absolute w-full z-20 text-center">
           <Link href="/">
             <a>
@@ -32,7 +32,7 @@ export default function Masthead() {
             alt="Text header"
           ></Image>
         </div>
-        <div className="absolute inset-0  pointer-events-none bg-black">
+        <div className="absolute inset-0  pointer-events-none">
           <Image
             src="/SAWA_header.png"
             quality={100}
