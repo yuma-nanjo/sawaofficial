@@ -7,14 +7,16 @@ function MyApp({ Component, pageProps }) {
     palette: {
       mode: "dark",
       primary: {
-        main: "#6a1b9a",
-        light: "#9c4dcc",
-        dark: "#38006b",
+        main:"#000000"
       },
-      secondary:{
-        main: "#aeea00",
-        light: "#e4ff54",
-        dark: "#79b700",
+      divider: "#ffffff",
+      background: {
+        default: "#000000",
+        paper: "#000000",
+      },
+      text: {
+        primary: "#fff",
+        secondary: "#000000",
       },
     },
   });
