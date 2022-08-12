@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }) {
       <CssBaseline />
       <Component {...pageProps} />
       <footer>
-        <p class="text-gray-200 text-center text-xs">&copy; SAWA. All Rights Reserved. </p>
+        <p className="text-gray-200 text-center text-xs">&copy; SAWA. All Rights Reserved. </p>
       </footer>
     </ThemeProvider>
   );
