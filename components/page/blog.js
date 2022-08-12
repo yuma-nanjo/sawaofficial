@@ -5,7 +5,7 @@ import BlogCard from "../Cards/blogCard";
 
 export default function Blog() {
   return (
-    <SimpleGrid minChildWidth="200px" spacing="20px">
+    <SimpleGrid minChildWidth="160px" spacing="10px">
       <BlogCard />
       <BlogCard />
       <BlogCard />

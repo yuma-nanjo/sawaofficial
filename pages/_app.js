@@ -8,12 +8,12 @@ function MyApp({ Component, pageProps }) {
     palette: {
       mode: "dark",
       primary: {
-        main:"#fff",
+        main: "#fff",
       },
       divider: "#ffffff",
       background: {
         default: "#000",
-        paper:"#000",
+        paper: "#000",
       },
       text: {
         primary: "#fff",
@@ -25,6 +25,9 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Component {...pageProps} />
+      <footer>
+        <p class="text-gray-200 text-center text-xs">&copy; SAWA. All Rights Reserved. </p>
+      </footer>
     </ThemeProvider>
   );
 }

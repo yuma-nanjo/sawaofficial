@@ -5,7 +5,7 @@ import NewsCard from "../Cards/newsCard";
 
 export default function News() {
   return (
-    <SimpleGrid minChildWidth="200px" spacing="20px">
+    <SimpleGrid minChildWidth="160px" spacing="10px">
       <NewsCard />
       <NewsCard />
       <NewsCard />
