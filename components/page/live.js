@@ -135,7 +135,7 @@ export default function Live() {
             <TableCell>DATE</TableCell>
             <TableCell align="right">TITLE</TableCell>
             <TableCell align="right">VENUE</TableCell>
-            <TableCell align="right">Tweet</TableCell>
+            <TableCell align="right">TWEET</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
