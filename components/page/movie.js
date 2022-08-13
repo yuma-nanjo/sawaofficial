@@ -30,7 +30,7 @@ function Movie() {
           </Center>
           <TabPanel value="1">
             <div className="MV">
-              <SimpleGrid minChildWidth="400px" spacing="10px">
+              <SimpleGrid minChildWidth="300px" spacing="10px">
                 <YouTube
                   videoId="BuobgfXvbnY"
                   iframeClassName={style.iframe}

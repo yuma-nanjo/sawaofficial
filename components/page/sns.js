@@ -24,21 +24,24 @@ function Sns() {
           <Center>
             <Box sx={{ borderBottom: 0, borderColor: "divider" }}>
               <TabList onChange={handleChange} aria-label="SAWA SNS">
-                <Tab label="Twitter" value="1" />
-                <Tab label="Instagram" value="2" />
+                <Tab label="Instagram" value="1" />
+                <Tab label="Twitter" value="2" />
               </TabList>
             </Box>
           </Center>
           <TabPanel value="1">
-            <Center>
-            <Timeline
-              dataSource={{ sourceType: "profile", screenName: "official_sawa" }}
-              options={{ theme: "dark", width: "400", height: "800" }}
-            />
-            </Center>
+            <Insta />
           </TabPanel>
           <TabPanel value="2">
-            <Insta />
+            <Center>
+              <Timeline
+                dataSource={{
+                  sourceType: "profile",
+                  screenName: "official_sawa",
+                }}
+                options={{ theme: "dark", width: "400", height: "800" }}
+              />
+            </Center>
           </TabPanel>
         </TabContext>
       </Box>

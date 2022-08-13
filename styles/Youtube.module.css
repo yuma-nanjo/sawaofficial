@@ -1,4 +1,5 @@
 .youtube {
+  position: static;
   width: 100%;
 }
 .iframe {
