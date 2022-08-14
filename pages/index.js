@@ -65,17 +65,18 @@ export default function Home(images) {
             </Center>
             <TabPanel value="1">
               {/* instagram */}
-              {images.images.map((image) => (
-                <SimpleGrid minChildWidth="360px" spacing="10px" key={image.id}>
+              <SimpleGrid minChildWidth="360px" spacing="10px">
+                {images.images.map((image) => (
                   <Image
                     src={image.media_url}
                     width={360}
                     height={360}
                     alt="image"
                     objectFit="cover"
+                    key={image.id}
                   />
-                </SimpleGrid>
-              ))}
+                ))}
+              </SimpleGrid>
             </TabPanel>
             <TabPanel value="2">
               <Center>
