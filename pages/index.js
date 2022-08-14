@@ -1,4 +1,4 @@
-import Error from 'next/error';
+import Error from "next/error";
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
@@ -25,22 +25,17 @@ export async function getStaticProps() {
   const user_id = process.env.NEXT_PUBLIC_INSTAGRAMID;
   const get_count = 9; //取得したい投稿数
 
-  try {
-    const res = await fetch(
-      `https://graph.facebook.com/v14.0/${user_id}?fields=business_discovery.username(${user_name}){id,followers_count,media_count,ig_id,media.limit(${get_count}){caption,media_url,like_count}}&access_token=${access_token}`
-    );
-    const posts = await res.json();
+  const res = await fetch(
+    `https://graph.facebook.com/v14.0/${user_id}?fields=business_discovery.username(${user_name}){id,followers_count,media_count,ig_id,media.limit(${get_count}){caption,media_url,like_count}}&access_token=${access_token}`
+  );
+  const errorCode = res.ok ? false : res.statusCode;
+  const posts = await res.json();
 
-    return {
-      props: {
-        images: posts.business_discovery.media.data,
-      },
-    };
-  } catch (err) {
-    if (err instanceof HttpError) {
-      return { props: { err: err.serialize() } };
-    }
-  }
+  return {
+    props: {
+      images: posts.business_discovery.media.data,
+    },
+  };
 }
 
 export default function Home(images) {
@@ -48,6 +43,9 @@ export default function Home(images) {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  if (errorCode) {
+    return <Error statusCode={errorCode} />;
+  }
   return (
     <>
       {/* header */}
