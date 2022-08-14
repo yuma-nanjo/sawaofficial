@@ -30,7 +30,7 @@ function Movie() {
           </Center>
           <TabPanel value="1">
             <div className="MV">
-              <SimpleGrid minChildWidth="300px" spacing="10px">
+              <SimpleGrid minChildWidth="300px" spacing="10px" position="relative">
                 <YouTube
                   videoId="BuobgfXvbnY"
                   iframeClassName={style.iframe}
@@ -51,7 +51,7 @@ function Movie() {
           </TabPanel>
           <TabPanel value="2">
           <div className="LIVE">
-              <SimpleGrid minChildWidth="400px" spacing="10px">
+              <SimpleGrid minChildWidth="300px" spacing="10px" position="relative">
                 <YouTube
                   videoId="Upl3GzsuuBI"
                   iframeClassName={style.iframe}

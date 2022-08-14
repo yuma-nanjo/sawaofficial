@@ -25,22 +25,6 @@ export default function Insta() {
 
   return (
     <>
-      <Image
-        src={posted.business_discovery.media.data[0].media_url}
-        alt="instagramImage"
-        quality={100}
-        width={360}
-        height={360}
-        objectFit="cover"
-      />
-      <Image
-        src={posted.business_discovery.media.data[1].media_url}
-        alt="instagramImage"
-        quality={100}
-        width={360}
-        height={360}
-        objectFit="cover"
-      />
       <button onClick={onClickUpdate}>更新</button>
     </>
   );
