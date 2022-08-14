@@ -7,10 +7,21 @@ import Blog from "../components/page/blog";
 import About from "../components/page/about";
 import Music from "../components/page/music";
 import Movie from "../components/page/movie";
-import Sns from "../components/page/sns";
 import { Divider } from "@mui/material";
+import { Timeline, Follow } from "react-twitter-widgets";
+import { Center } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
 
 export default function Home(images) {
+  const [value, setValue] = React.useState("1");
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
   return (
     <>
       {/* header */}
@@ -41,10 +52,43 @@ export default function Home(images) {
         <Divider style={{ marginTop: "1rem", marginBottom: "1rem" }}>
           SNS
         </Divider>
-        <h1>instagram</h1>
-        {images.images.map((image) => (
-          <Image src={image.media_url} width={360} height={360} alt="image" objectFit="cover" />
-        ))}
+        <Box sx={{ width: "100%", typography: "body1" }}>
+          <TabContext value={value}>
+            <Center>
+              <Box sx={{ borderBottom: 0, borderColor: "divider" }}>
+                <TabList onChange={handleChange} aria-label="SAWA SNS">
+                  <Tab label="Instagram" value="1" />
+                  <Tab label="Twitter" value="2" />
+                </TabList>
+              </Box>
+            </Center>
+            <TabPanel value="1">
+              {/* instagram */}
+              {images.images.map((image) => (
+                <SimpleGrid minChildWidth="360px" spacing="10px" key={image.id}>
+                  <Image
+                    src={image.media_url}
+                    width={360}
+                    height={360}
+                    alt="image"
+                    objectFit="cover"
+                  />
+                </SimpleGrid>
+              ))}
+            </TabPanel>
+            <TabPanel value="2">
+              <Center>
+                <Timeline
+                  dataSource={{
+                    sourceType: "profile",
+                    screenName: "official_sawa",
+                  }}
+                  options={{ theme: "dark", width: "400", height: "800" }}
+                />
+              </Center>
+            </TabPanel>
+          </TabContext>
+        </Box>
       </div>
     </>
   );
