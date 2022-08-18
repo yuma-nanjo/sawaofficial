@@ -1,4 +1,3 @@
-import Error from "next/error";
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
@@ -18,18 +17,12 @@ import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
-import { useRouter } from "next/router";
 
-export default function Home(images) {
-  const { isFallback } = useRouter();
+export default function Home(data) {
   const [value, setValue] = React.useState("1");
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  if (isFallback) {
-    return <></>;
-  }
 
   return (
     <>
@@ -74,14 +67,14 @@ export default function Home(images) {
             <TabPanel value="1">
               {/* instagram */}
               <SimpleGrid minChildWidth="360px" spacing="10px">
-                {images.images.map((image) => (
+                {data.posts.business_discovery.media.data.map((data) => (
                   <Image
-                    src={image.media_url}
+                    src={data.media_url}
                     width={360}
                     height={360}
-                    alt="image"
+                    alt="data"
                     objectFit="cover"
-                    key={image.id}
+                    key={data.id}
                   />
                 ))}
               </SimpleGrid>
@@ -117,7 +110,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      images: posts.business_discovery.media.data,
+      posts,
     },
   };
 }
