@@ -24,6 +24,7 @@ export default function Home(data) {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  console.log(data.posts.business_discovery.media.data);
 
   return (
     <>
