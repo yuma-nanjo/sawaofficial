@@ -18,6 +18,8 @@ import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
 
 export default function Home({ posts }) {
   const [value, setValue] = React.useState("1");
@@ -67,19 +69,22 @@ export default function Home({ posts }) {
             </Center>
             <TabPanel value="1">
               {/* instagram */}
-              <SimpleGrid minChildWidth="360px" spacing="10px">
+              <ImageList variant="masonry" cols={3} gap={8}>
                 {posts.business_discovery.media.data.map((data) => (
-                  <Link href={data.permalink} alt={data.id} key={data.id}>
-                    <Image
-                      src={data.media_url}
-                      width={360}
-                      height={360}
-                      alt="data"
-                      objectFit="cover"
-                    />
-                  </Link>
+                  <ImageListItem key={data.id}>
+                    <Link href={data.permalink} alt={data.id} key={data.id}>
+                      <a>
+                        <img
+                          src={data.media_url}
+                          srcSet={data.media_url}
+                          alt={data.id}
+                          loading="lazy"
+                        />
+                      </a>
+                    </Link>
+                  </ImageListItem>
                 ))}
-              </SimpleGrid>
+              </ImageList>
             </TabPanel>
             <TabPanel value="2">
               <Center>
