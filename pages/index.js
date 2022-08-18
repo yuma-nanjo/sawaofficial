@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import Masthead from "../components/Masthead";
 import News from "../components/page/news";
 import Live from "../components/page/live";
@@ -68,14 +69,15 @@ export default function Home(data) {
               {/* instagram */}
               <SimpleGrid minChildWidth="360px" spacing="10px">
                 {data.posts.business_discovery.media.data.map((data) => (
-                  <Image
-                    src={data.media_url}
-                    width={360}
-                    height={360}
-                    alt="data"
-                    objectFit="cover"
-                    key={data.id}
-                  />
+                  <Link href={data.permalink} alt={data.id} key={data.id}>
+                    <Image
+                      src={data.media_url}
+                      width={360}
+                      height={360}
+                      alt="data"
+                      objectFit="cover"
+                    />
+                  </Link>
                 ))}
               </SimpleGrid>
             </TabPanel>
@@ -101,10 +103,10 @@ export async function getStaticProps() {
   const user_name = "sawa_officialgram"; //ビジネスorクリエイターアカウントの必要あり
   const access_token = process.env.NEXT_PUBLIC_INSTAGRAMTOKEN;
   const user_id = process.env.NEXT_PUBLIC_INSTAGRAMID;
-  const get_count = 9; //取得したい投稿数
+  const get_count = 12; //取得したい投稿数
 
   const res = await fetch(
-    `https://graph.facebook.com/v14.0/${user_id}?fields=business_discovery.username(${user_name}){id,followers_count,media_count,ig_id,media.limit(${get_count}){caption,media_url,like_count}}&access_token=${access_token}`
+    `https://graph.facebook.com/v14.0/${user_id}?fields=business_discovery.username(${user_name}){media.limit(${get_count}){caption,media_url,permalink}}&access_token=${access_token}`
   );
   const posts = await res.json();
 
