@@ -28,7 +28,6 @@ export async function getStaticProps() {
   const res = await fetch(
     `https://graph.facebook.com/v14.0/${user_id}?fields=business_discovery.username(${user_name}){id,followers_count,media_count,ig_id,media.limit(${get_count}){caption,media_url,like_count}}&access_token=${access_token}`
   );
-  const errorCode = res.ok ? false : res.statusCode;
   const posts = await res.json();
 
   return {
@@ -43,9 +42,6 @@ export default function Home(images) {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  if (errorCode) {
-    return <Error statusCode={errorCode} />;
-  }
   return (
     <>
       {/* header */}
