@@ -18,6 +18,7 @@ import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
+import { useRouter } from "next/router";
 
 export async function getStaticProps() {
   const user_name = "sawa_officialgram"; //ビジネスorクリエイターアカウントの必要あり
@@ -38,10 +39,16 @@ export async function getStaticProps() {
 }
 
 export default function Home(images) {
+  const { isFallback } = useRouter();
   const [value, setValue] = React.useState("1");
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  if (isFallback) {
+    return <></>;
+  }
+
   return (
     <>
       {/* header */}
