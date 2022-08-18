@@ -99,7 +99,7 @@ export default function Home(data) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const user_name = "sawa_officialgram"; //ビジネスorクリエイターアカウントの必要あり
   const access_token = process.env.NEXT_PUBLIC_INSTAGRAMTOKEN;
   const user_id = process.env.NEXT_PUBLIC_INSTAGRAMID;
