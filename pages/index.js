@@ -33,7 +33,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      images: posts.business_discovery.media.data(),
+      images: posts.business_discovery().media().data(),
     },
   };
 }
