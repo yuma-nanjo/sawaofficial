@@ -19,12 +19,11 @@ import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 
-export default function Home(data) {
+export default function Home({posts}) {
   const [value, setValue] = React.useState("1");
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  console.log(data.posts.business_discovery.media.data);
 
   return (
     <>
@@ -69,7 +68,7 @@ export default function Home(data) {
             <TabPanel value="1">
               {/* instagram */}
               <SimpleGrid minChildWidth="360px" spacing="10px">
-                {data.posts.business_discovery.media.data.map((data) => (
+                {posts.business_discovery.media.data.map((data) => (
                   <Link href={data.permalink} alt={data.id} key={data.id}>
                     <Image
                       src={data.media_url}
